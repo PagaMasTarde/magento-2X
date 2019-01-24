@@ -12,7 +12,7 @@ This module supports Magento v2.1 and higher.
 To install the module of Paga+Tarde in your Magento shop, you can use Composer:
 
 ```php
-    composer require pagamastarde/magento-2x
+    composer require pagamastarde/magento-2x --no-dev
     bin/magento module:enable DigitalOrigin_Pmt
     bin/magento setup:upgrade
 ```

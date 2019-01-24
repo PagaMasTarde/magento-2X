@@ -44,7 +44,8 @@ else
     echo 'Package: '$package
     docker-compose exec -u www-data magento2-${ENVIROMENT} php /var/www/html/bin/magento cache:enable
     docker-compose exec -u www-data magento2-${ENVIROMENT} php /var/www/html/bin/magento deploy:mode:set production
-    docker-compose exec -u www-data magento2-${ENVIROMENT} composer require pagamastarde/magento-2x:$package -d /var/www/html
+    docker-compose exec -u www-data magento2-${ENVIROMENT} composer require pagamastarde/magento-2x:$package \
+     --no-dev -d /var/www/html
     docker-compose exec -u www-data magento2-${ENVIROMENT} php /var/www/html/bin/magento module:enable DigitalOrigin_Pmt
 fi
 

@@ -49,7 +49,6 @@
     "files": [ "registration.php" ],
     "psr-4": {
       "DigitalOrigin\\Pmt\\": ""
-    },
-    "exclude-from-classmap": ["/Test/"]
+    }
   }
 }
