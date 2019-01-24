@@ -50,5 +50,10 @@
     "psr-4": {
       "DigitalOrigin\\Pmt\\": ""
     }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "rm -rf vendor/pagamastarde/magento-2x/Test"
+    ]
   }
 }
