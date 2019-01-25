@@ -41,6 +41,8 @@ else
         package='dev-master'
     fi
 
+    package='v7.0.6.x-dev'
+
     echo 'Package: '$package
     docker-compose exec -u www-data magento2-${ENVIROMENT} php /var/www/html/bin/magento cache:enable
     docker-compose exec -u www-data magento2-${ENVIROMENT} php /var/www/html/bin/magento deploy:mode:set production
