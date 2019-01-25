@@ -52,7 +52,7 @@
     }
   },
   "scripts": {
-    "post-install-cmd": [
+    "pre-install-cmd": [
       "rm -rf vendor/pagamastarde/magento-2x/Test"
     ]
   }
