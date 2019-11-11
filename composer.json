@@ -36,7 +36,7 @@
       "pagantis/module-utils": "^2.0"
   },
   "require-dev": {
-      "pagantis/selenium-form-utils": "^2.0",
+      "pagantis/selenium-form-utils": "^3.0",
       "magento/module-sales": "102.0.*",
       "magento/module-checkout": "100.3.*",
       "magento/module-payment": "100.3.*",
