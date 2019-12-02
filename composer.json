@@ -45,7 +45,7 @@
   "autoload": {
     "files": [ "registration.php" ],
     "psr-4": {
-      "Pagantis\\Pagantis\\": ""
+      "Pagantis\\Pagantis\\": "src"
     }
   },
   "minimum-stability": "dev"
