@@ -59,6 +59,7 @@ commands:
                 255059b03eb9d30604d5ef52fca7465d
             docker-compose exec -u www-data magento${VERSION}-test php /var/www/html/bin/magento sampledata:deploy
             docker-compose exec -u www-data magento${VERSION}-test php /var/www/html/bin/magento setup:upgrade
+            docker-compose exec -u www-data magento${VERSION}-test php /var/www/html/bin/magento setup:di:compile            
             docker-compose exec -u www-data magento${VERSION}-test php /var/www/html/bin/magento cron:run
             docker-compose exec -u www-data magento${VERSION}-test php /var/www/html/bin/magento cache:enable
             containerPort=$(docker container port magento${VERSION}-test)
