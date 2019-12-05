@@ -49,7 +49,7 @@
     }
   },
   "minimum-stability": "dev",
-      "config": {
+  "config": {
         "vendor-dir": "src"
-    }
+  }
 }
