@@ -50,6 +50,6 @@
   },
   "minimum-stability": "dev",
       "config": {
-        "vendor-dir": "extension/lib/Pagantis"
+        "vendor-dir": "src"
     }
 }
