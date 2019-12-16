@@ -36,7 +36,7 @@ use Magento\Framework\App\Request\InvalidRequestException;
  * Class Index
  * @package Pagantis\Pagantis\Controller\Notify
  */
-class IndexV2 extends Action implements CsrfAwareActionInterface
+class IndexV2 extends Action
 {
     /** Orders tablename */
     const ORDERS_TABLE = 'cart_process';
@@ -147,11 +147,19 @@ class IndexV2 extends Action implements CsrfAwareActionInterface
         $this->dbObject = $dbObject;
         $this->checkoutSession = $checkoutSession;
         $this->origin = ($_SERVER['REQUEST_METHOD'] == 'POST') ? 'Notification' : 'Order';
+
+        // Fix for Magento2.3 adding isAjax to the request params
+        if(interface_exists("\Magento\Framework\App\CsrfAwareActionInterface")) {
+            $request = $this->getRequest();
+            if ($request instanceof Http && $request->isPost()) {
+                $request->setParam('isAjax', true);
+                $request->getHeaders()->addHeaderLine('X_REQUESTED_WITH', 'XMLHttpRequest');
+            }
+        }
     }
 
     /**
-     * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface|void
-     * @throws UnknownException
+     * @throws \Exception
      */
     public function execute()
     {
