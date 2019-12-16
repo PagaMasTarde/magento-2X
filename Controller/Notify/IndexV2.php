@@ -149,7 +149,7 @@ class IndexV2 extends Action
         $this->origin = ($_SERVER['REQUEST_METHOD'] == 'POST') ? 'Notification' : 'Order';
 
         // Fix for Magento2.3 adding isAjax to the request params
-        if(interface_exists("\Magento\Framework\App\CsrfAwareActionInterface")) {
+        if (interface_exists("\Magento\Framework\App\CsrfAwareActionInterface")) {
             $request = $this->getRequest();
             if ($request instanceof Http && $request->isPost()) {
                 $request->setParam('isAjax', true);

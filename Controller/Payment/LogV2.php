@@ -8,7 +8,7 @@ use Magento\Framework\App\CsrfAwareActionInterface;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\App\Request\InvalidRequestException;
 
-class LogV2 extends Action implements CsrfAwareActionInterface
+class LogV2 extends Action
 {
     /** Concurrency tablename */
     const LOGS_TABLE = 'Pagantis_logs';
@@ -34,6 +34,14 @@ class LogV2 extends Action implements CsrfAwareActionInterface
         $this->config = $pagantisConfig->getConfig();
         $this->dbObject = $dbObject;
 
+        // Fix for Magento2.3 adding isAjax to the request params
+        if (interface_exists("\Magento\Framework\App\CsrfAwareActionInterface")) {
+            $request = $this->getRequest();
+            if ($request instanceof Http && $request->isPost()) {
+                $request->setParam('isAjax', true);
+                $request->getHeaders()->addHeaderLine('X_REQUESTED_WITH', 'XMLHttpRequest');
+            }
+        }
 
         return parent::__construct($context);
     }

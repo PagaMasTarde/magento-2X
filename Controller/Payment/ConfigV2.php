@@ -7,7 +7,7 @@ use Magento\Framework\App\CsrfAwareActionInterface;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\App\Request\InvalidRequestException;
 
-class ConfigV2 extends Action implements CsrfAwareActionInterface
+class ConfigV2 extends Action
 {
     /** Config tablename */
     const CONFIG_TABLE = 'Pagantis_config';
