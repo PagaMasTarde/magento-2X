@@ -47,6 +47,5 @@
     "psr-4": {
       "Pagantis\\Pagantis\\": ""
     }
-  },
-  "minimum-stability": "dev"
+  }
 }
