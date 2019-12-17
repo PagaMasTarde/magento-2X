@@ -14,7 +14,7 @@
             <argument name="methodCode" xsi:type="const">Pagantis\Pagantis\Model\Ui\ConfigProvider::CODE</argument>
         </arguments>
     </virtualType>
-    <!--virtualType name="pagantisLogger" type="Magento\Payment\Model\Method\Logger">
+    <virtualType name="pagantisLogger" type="Magento\Payment\Model\Method\Logger">
         <arguments>
             <argument name="config" xsi:type="object">pagantisConfig</argument>
         </arguments>
@@ -23,7 +23,7 @@
         <arguments>
             <argument name="logger" xsi:type="object">pagantisLogger</argument>
         </arguments>
-    </type-->
+    </type>
     <virtualType name="pagantisCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
         <arguments>
             <argument name="commands" xsi:type="array">
