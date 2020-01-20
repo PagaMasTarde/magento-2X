@@ -73,6 +73,7 @@ commands:
       - run:
           name: Unzip Test Folder & Composer Require
           command: |
+            [ -d "/path/to/dir" ] && rm -rf Test
             unzip Test.zip
   basic_test:
     description: "Basic Test"
