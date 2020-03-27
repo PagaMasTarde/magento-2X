@@ -374,7 +374,7 @@ class Index extends Action
         if (!$dbConnection->isTableExists($tableName)) {
             $table = $dbConnection
                 ->newTable($tableName)
-                ->addColumn('id', Table::TYPE_SMALLINT, null, array('primary'=>true, 'nullable' => false))
+                ->addColumn('id', Table::TYPE_INTEGER, 10, array('primary'=>true, 'nullable' => false))
                 ->addColumn('order_id', Table::TYPE_TEXT, 50)
                 ->addColumn('mg_order_id', Table::TYPE_TEXT, 50);
             return $dbConnection->createTable($table);
