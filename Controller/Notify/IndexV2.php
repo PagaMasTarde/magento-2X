@@ -170,7 +170,11 @@ class IndexV2 extends Action
             if ($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['origin'] == 'notification') {
                 $returnUrl = $this->_url->getUrl('checkout', ['_fragment' => 'payment']);
                 $this->_redirect($returnUrl);
+            }elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                // prevent colision between POST and GET requests
+                sleep(10);
             }
+            
             $this->checkConcurrency();
             $this->getMerchantOrder();
             $this->getPagantisOrderId();
