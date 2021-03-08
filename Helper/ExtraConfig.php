@@ -33,7 +33,7 @@ class ExtraConfig
     {
         $data = array();
         $dbConnection = $this->dbObject->getConnection();
-        $prefixedTableName = $dbConnection->getTableName(self::CONFIG_TABLE);
+        $prefixedTableName = $this->dbObject->getTableName(self::CONFIG_TABLE);
         if ($dbConnection->isTableExists($prefixedTableName)) {
             $result = $dbConnection->fetchAll("select * from $prefixedTableName");
             if (count($result)) {
