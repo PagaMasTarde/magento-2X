@@ -389,7 +389,7 @@ class Index extends Action
             $table = $dbConnection
                 ->newTable($tableName)
                 ->addColumn('id', Table::TYPE_INTEGER, 10, array('primary'=>true, 'nullable' => false))
-                ->addColumn('order_id', Table::TYPE_TEXT, 50, array('primary'=>true, 'nullable' => true))
+                ->addColumn('order_id', Table::TYPE_TEXT, 50, array('primary'=>true, 'nullable' => false))
                 ->addColumn('mg_order_id', Table::TYPE_TEXT, 50)
                 ->addColumn('token', Table::TYPE_TEXT, 32);
             return $dbConnection->createTable($table);
