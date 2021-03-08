@@ -50,7 +50,7 @@ class InstallData implements InstallDataInterface
      */
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
-        $prefixedTableName = $setup->getConnection()->getTableName(self::CONFIG_TABLE);
+        $prefixedTableName = $setup->getTable(self::CONFIG_TABLE);
         if ($setup->tableExists($prefixedTableName)) {
             foreach ($this->defaultConfigs as $config => $value) {
                 $setup->getConnection()

@@ -55,8 +55,8 @@ class UpgradeData implements UpgradeDataInterface
     public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
         $setup->startSetup();
-        $prefixedTableName = $setup->getConnection()->getTableName(self::CONFIG_TABLE);
-        $prefixedOrdersTableName = $setup->getConnection()->getTableName(self::ORDERS_TABLE);
+        $prefixedTableName = $setup->getTable(self::CONFIG_TABLE);
+        $prefixedOrdersTableName = $setup->getTable(self::ORDERS_TABLE);
         if ($setup->tableExists($prefixedTableName)) {
             if (version_compare($context->getVersion(), '8.3.1') < 0) {
                 $newConfigs = array(
